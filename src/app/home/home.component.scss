@@ -167,6 +167,31 @@ section {
 //   display: none;
 // }
 
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #465c38;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: #FFBB00;
+}
+
+.scroll-btn.show {
+  display: flex;
+}
 
 @media screen and (max-width: 1009px){
   section{

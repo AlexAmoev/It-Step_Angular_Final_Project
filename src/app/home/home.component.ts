@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { AllProducts } from '../all-products';
 import { ProductInfo } from '../product-info';
@@ -38,6 +38,17 @@ export class HomeComponent implements OnInit {
   public isCart: boolean = false;
 
   public isSingIn: boolean = false;
+
+  showButton = false;
+  
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.showButton = window.scrollY > 300;
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   isAuth() {
     let tempToken = this.cookie.get('token');
