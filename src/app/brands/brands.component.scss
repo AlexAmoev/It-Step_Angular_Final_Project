@@ -1,0 +1,51 @@
+section {
+  display: flex;
+  // border: 1px solid red;
+  // position: sticky;
+  // min-height: 100vh;
+  // z-index: -1;
+  // padding-top: 100px;
+  background-image: url("https://files.oaiusercontent.com/file-54oJqMtJGW3DdqYLoPQGU9?se=2025-03-23T21%3A23%3A33Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D324709df-44bc-4d1a-b276-5c3a22fc7d3d.webp&sig=fgZSLz%2BuHG0e40rfaUZoKB8uZ1MNWbsRordnBHCpWR8%3D");
+  background-repeat: no-repeat;
+  background-position: 0px -200px;
+  background-size: cover;
+  height: 70px;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    padding-inline: 20px;
+    // border: 1px solid blue;
+    li {
+      button {
+        background-color: #dcdcd0;
+        border: none;
+        height: 40px;
+        width: 60px;
+        border-radius: 0px 20px;
+        // border-radius: 50%;
+        color: #465c38;
+        transition: 0.5s;
+        i {
+          font-size: 20px;
+        }
+      }
+      button:hover {
+        background-color: #6f7d64;
+        color: #dcdcd0;
+      }
+      button.active {
+        background-color: #465c38;
+        color: white;
+      }
+    }
+  }
+}
+
+// button.active {
+//   background-color: green;
+//   color: white;
+// }

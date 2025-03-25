@@ -1,0 +1,59 @@
+<section>
+  <form class="fomrArea" [formGroup]="formInfo" (ngSubmit)="singUp()">
+    <div class="formInner">
+      <div class="left">
+        <div class="area">
+          <label for=""><h3>First name:</h3></label>
+          <input type="text" formControlName="firstName" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Last name:</h3></label>
+          <input type="text" formControlName="lastName" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Age:</h3></label>
+          <input type="number" formControlName="age" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Email:</h3></label>
+          <input type="email" formControlName="email" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Password:</h3></label>
+          <input type="password" formControlName="password" />
+        </div>
+      </div>
+      <div class="right">
+        <div class="area">
+          <label for=""><h3>Address:</h3></label>
+          <input type="text" formControlName="address" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Phone:</h3></label>
+          <input type="text" formControlName="phone" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Zip-code:</h3></label>
+          <input type="text" formControlName="zipcode" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Avatar:</h3></label>
+          <input type="text" formControlName="avatar" />
+        </div>
+        <div class="area">
+          <label for=""><h3>Gender:</h3></label>
+          <select formControlName="gender">
+            <option value="" disabled selected>Choose gender:</option>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="OTHER">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="formBtn">
+      <button type="submit">Sing Up</button>
+    </div>
+  </form>
+</section>

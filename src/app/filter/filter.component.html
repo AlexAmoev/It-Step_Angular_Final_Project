@@ -1,0 +1,85 @@
+<form [formGroup]="formInfo" (ngSubmit)="filter()">
+  <div class="formInner">
+    <div class="left">
+      <div class="area">
+        <label for=""><h3>Page: </h3></label>
+        <input type="number" formControlName="page_index" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Page size: </h3></label>
+        <input type="number" formControlName="page_size" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Keyword: </h3></label>
+        <input type="text" formControlName="keywords" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Category: </h3></label>
+        <!-- <input type="text" formControlName="category_id" /> -->
+        <select formControlName="category_id">
+          <option value="" disabled selected>Select category:</option>
+          <option value="1">Notebooks</option>
+          <option value="2">Phones</option>
+        </select>
+      </div>
+      <div class="area">
+        <label for=""><h3>Brand: </h3></label>
+        <!-- <input type="text" formControlName="brand" /> -->
+        <select formControlName="brand">
+          <option value="" disabled selected>Select brand:</option>
+          <option value="asus">asus</option>
+          <option value="samsung">samsung</option>
+          <option value="xiaomi">xiaomi</option>
+          <option value="apple">apple</option>
+          <option value="honor">honor</option>
+          <option value="oneplus">oneplus</option>
+          <option value="lenovo">lenovo</option>
+          <option value="hp">hp</option>
+          <option value="acer">acer</option>
+          <option value="dell">dell</option>
+          <option value="msi">msi</option>
+          <option value="lg">lg</option>
+        </select>
+      </div>
+    </div>
+    <div class="right">
+      <div class="area">
+        <label for=""><h3>Rating: </h3></label>
+        <input type="number" formControlName="rating" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Min price: </h3></label>
+        <input type="number" formControlName="price_min" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Max price: </h3></label>
+        <input type="number" formControlName="price_max" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Sort: </h3></label>
+        <!-- <input type="" formControlName="sort_by" /> -->
+        <select formControlName="sort_by">
+          <option value="" disabled selected>Srot by:</option>
+          <option value="rating">Rating</option>
+          <option value="price">Price</option>
+          <option value="issue_date">Issue date</option>
+          <option value="title">Title</option>
+        </select>
+      </div>
+      <div class="area">
+        <label for=""><h3>Direction: </h3></label>
+        <select formControlName="sort_direction">
+          <option value="" disabled selected>Sort direction:</option>
+          <option value="asc">Asc</option>
+          <option value="desc">Desc</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="formBtns">
+    <button type="submit">Filter</button>
+    <button (click)="reset()">Resest</button>
+  </div>
+</form>

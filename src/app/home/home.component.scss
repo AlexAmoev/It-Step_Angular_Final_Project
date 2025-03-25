@@ -1,0 +1,193 @@
+// app-brands {
+//   position: sticky;
+//   top: 0;
+//   z-index: 9999;
+// }
+body {
+  height: 100%;
+  background-image: url("https://files.oaiusercontent.com/file-9V1QLiY8ZNMUjRe7szaHWQ?se=2025-03-23T23%3A56%3A57Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D6549c71b-ed90-4011-8323-08b9f9868e9c.webp&sig=jsKA9z77WgqSMtOKwB6xm0nKt7tKHbItsQlT25mKwpg%3D");
+}
+
+section {
+  // background-image: url('https://img.freepik.com/free-photo/smooth-green-background_53876-108464.jpg?t=st=1742774492~exp=1742778092~hmac=ebd45c61a6481607ebf190c70b7e23dcff6274eed3a927705f866201e3d18398&w=996');
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  // border: 3px solid yellow;
+  margin-top: 30px;
+  .sectionLeft {
+    // border: 3px solid red;
+    width: 20%;
+    // height: 370px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+  }
+  .sectionRight {
+    width: 80%;
+    height: 100%;
+    // border: 3px solid blue;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    .card {
+      // border: 2px solid red;
+      border: none;
+      height: 450px;
+      width: 250px;
+      background-color: #dcdcd0;
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: center;
+      align-content: center;
+
+      border-radius: 0px 20px;
+      .image {
+        height: 30%;
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 0px 20px 0px 0px;
+      }
+      .cardBody {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        gap: 5px;
+        .title {
+          // background-color: yellow;
+          color: #465c38;
+          height: 55px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          padding-inline: 10px;
+        }
+        .cardInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          // border: 1px solid green;
+          border: none;
+          width: 90%;
+          border-radius: 20px 0px;
+          background-color: #465c38;
+          gap: 5px;
+          h4 {
+            color: #dcdcd0 !important;
+          }
+        }
+        .desc {
+          height: 95px;
+          width: 100%;
+          padding-inline: 10px;
+          overflow: auto;
+          color: #465c38;
+        }
+        .desc::-webkit-scrollbar {
+          display: none;
+        }
+        .cardBtn {
+          position: absolute;
+          bottom: -50px;
+          background-color: #465c38;
+          border: none;
+          height: 40px;
+          width: 60px;
+          border-radius: 0px 20px;
+          // border-radius: 50%;
+          color: #dcdcd0;
+          transition: 0.5s;
+        }
+        .cardBtn:hover {
+          background-color: #dcdcd0;
+          color: #465c38;
+          border: 1px solid #465c38;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background-color: #FFBB00 !important;
+  color: #dcdcd0;
+  border: none;
+}
+
+.pageBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 50px 0;
+  button {
+    
+    background-color: #dcdcd0;
+    border: none;
+    height: 40px;
+    width: 60px;
+    border-radius: 0px 20px;
+    // border-radius: 50%;
+    color: #465c38;
+    transition: 0.5s;
+  }
+  button:hover {
+    background-color: #465c38;
+    
+    color: #dcdcd0;
+    border: 1px solid #465c38;
+  }
+  .pages {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .pageSize {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    // margin: 20px 0;
+  }
+}
+
+// .hide{
+//   display: none;
+// }
+
+
+@media screen and (max-width: 1009px){
+  section{
+    // border: 2px solid yellow;
+    flex-direction: column;
+    align-items: center;
+    .sectionLeft{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: unset;
+    }
+    .sectionRight{
+      width: 100%;
+      // background-color: yellow;
+    }
+  }
+}
+
+@media screen and (max-width: 830px){
+  app-brands{
+    display: none;
+  }
+}

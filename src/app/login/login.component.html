@@ -1,0 +1,18 @@
+<form [formGroup]="fomrInfo" (ngSubmit)="logIn()">
+  <div class="area">
+    <label for=""><h3>Email</h3></label>
+    <input type="email" formControlName="email" />
+  </div>
+  <div class="area">
+    <label for=""><h3>Password</h3></label>
+    <input type="password" formControlName="password" />
+  </div>
+  <div class="loginBtnsTop">
+    <button type="submit">Log in</button>
+    <button (click)="singUp()">Sing Up</button>
+  </div>
+  <div class="loginBtnsBot">
+    <button (click)="passRec()">Forgot password ?</button>
+    <button (click)="showHide()" id="close">Close</button>
+  </div>
+</form>

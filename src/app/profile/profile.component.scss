@@ -1,0 +1,193 @@
+section {
+  width: 100%;
+  height: 70vh;
+  //   border: 2px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .userInfo {
+    height: 100%;
+    width: 50%;
+    // border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 0 20px;
+    background-color: #dcdcd0;
+    h1 {
+      color: #dcdcd0;
+    }
+    h3 {
+      color: #dcdcd0;
+    }
+    button {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      background-color: #465c38;
+      border: none;
+      height: 40px;
+      width: 80px;
+      border-radius: 0px 20px;
+      // border-radius: 50%;
+      color: #dcdcd0;
+      transition: 0.5s;
+    //   margin-bottom: 20px;
+    }
+    button:hover {
+      background-color: #dcdcd0;
+      color: #465c38;
+      border: 1px solid #465c38;
+    }
+    .userInfoTop {
+      // border: 2px solid red;
+      border-radius: 0px 20px 0 0;
+      margin-top: 20px;
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      background-color: #465c38;
+      img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        padding: 10px;
+      }
+      .name {
+        // border: 2px solid red;
+        height: 100%;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        align-content: center;
+        gap: 10px;
+      }
+    }
+    .userInfoBot {
+      //   border: 2px solid yellow;
+      margin-top: 20px;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      align-content: center;
+      padding-inline: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: #465c38;
+      border-radius: 0 0 0 20px;
+    }
+  }
+}
+
+.updateUserOut {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  //   background-color: rgba(201, 184, 184, 0.9);
+  background-color: #465c38;
+  z-index: 99;
+  transition: opacity 0.3s ease-in-out;
+  .updateUserIn {
+    // border: 1px solid black;
+    .fomrArea {
+      padding-top: 20px;
+    //   border: 2px solid blue;
+      width: 250px;
+      background-color: #dcdcd0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 20px;
+      .area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        padding-inline: 20px;
+        gap: 5px;
+        h3 {
+          color: #465c38;
+        }
+        input {
+          height: 25px;
+          width: 100%;
+          //   border: 2px solid red;
+          border: none;
+          background-color: #465c38;
+          color: #dcdcd0;
+          border-radius: 10px;
+          text-align: center;
+        }
+        select {
+          height: 25px;
+          width: 100%;
+          border: none;
+          // border: 2px solid red;
+          background-color: #465c38;
+          color: #dcdcd0;
+          border-radius: 10px;
+          text-align: center;
+        }
+      }
+      button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #465c38;
+        border: none;
+        height: 40px;
+        width: 60px;
+        border-radius: 0px 20px;
+        // border-radius: 50%;
+        color: #dcdcd0;
+        transition: 0.5s;
+      }
+      button:hover {
+        background-color: #dcdcd0;
+        color: #465c38;
+        border: 1px solid #465c38;
+      }
+    }
+  }
+  // display: none;
+  // .hidden {
+  //   display: none;
+  // }
+  //   .authInner {
+  //     display: none;
+  //   }
+}
+
+@media screen and (max-width: 850px) {
+  section {
+    height: 100%;
+    .userInfo {
+      height: 100%;
+      .userInfoTop {
+        flex-direction: column !important;
+        .name{
+            margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

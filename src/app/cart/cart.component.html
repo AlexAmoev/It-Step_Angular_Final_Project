@@ -1,0 +1,109 @@
+<section>
+  <div class="leftSide">
+    @for (item of cartProducts; track $index) {
+    <div class="card">
+      <div
+        (click)="showHide(); getGallery(item)"
+        class="image"
+        [ngStyle]="{
+          'background-image':
+            'url(' +
+            (item.images[0]
+              ? item.images[0]
+              : 'https://t3.ftcdn.net/jpg/02/14/87/18/360_F_214871809_jdrssOIkYx1d1uO0Y9uc6ainPYcuY9l7.jpg') +
+            ')'
+        }"
+      ></div>
+      <div class="cardBody">
+        <div class="cardBodyInfo">
+          <h3>{{ item.title }}</h3>
+          <div class="desc">
+            <p>{{ item.description }}</p>
+          </div>
+          <p>In stock: {{ item.stock }}</p>
+        </div>
+        <div class="cardBodyPrice">
+          <h3>Qty:</h3>
+          <div class="cardBtns">
+            <i (click)="reduce(item)" class="fa-solid fa-circle-minus"></i>
+            @for (itemcount of prodFormCart; track $index) { @if (item._id ==
+            itemcount.productId) {
+            <h3>{{ itemcount.quantity }}</h3>
+            } }
+            <i (click)="add(item)" class="fa-solid fa-circle-plus"></i>
+          </div>
+          <h3>{{ item.price.current }}</h3>
+          @for (itemPrice of prodFormCart; track $index) { @if (item._id ==
+          itemPrice.productId) {
+          <h3
+            style="
+              border: 1px solid #dcdcd0;
+              height: 40px;
+              width: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              background-color: #dcdcd0;
+              color: #465c38;
+            "
+          >
+            {{ itemPrice.pricePerQuantity * itemPrice.quantity }}
+          </h3>
+
+          } }
+        </div>
+        <i (click)="delItem(item)" id="del" class="fa-solid fa-trash"></i>
+      </div>
+    </div>
+    <div (click)="showHide()" class="galleryOut" *ngIf="isHide">
+      <div
+        class="galleryIn"
+        (click)="$event.stopPropagation()"
+        [ngStyle]="{
+          'background-image':
+            'url(' +
+            (currentImg
+              ? currentImg
+              : 'https://t3.ftcdn.net/jpg/02/14/87/18/360_F_214871809_jdrssOIkYx1d1uO0Y9uc6ainPYcuY9l7.jpg') +
+            ')'
+        }"
+      >
+        <div class="galleryBtns">
+          <i (click)="backImg()" id="back" class="fa-solid fa-circle-chevron-left"></i>
+          <i (click)="nextImg()" id="next" class="fa-solid fa-circle-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+  <div class="rightSide">
+    <h1>Products:</h1>
+    <div class="checkOutProd">
+      @if (totalNotebooks) {
+      <div class="notebook">
+        <div class="checkProdInner">
+          <i class="fa-solid fa-laptop"></i>
+          <h4>: {{ totalNotebooks }}</h4>
+        </div>
+        <h3>Total: {{ totalNotebooksPrice }} $</h3>
+      </div>
+      } @if (totalPhones) {
+      <div class="phones">
+        <div class="checkProdInner">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <h4>: {{ totalPhones }}</h4>
+        </div>
+        <h3>Total: {{ totalPhonesPrice }} $</h3>
+      </div>
+      }
+    </div>
+    <div class="checkOut">
+      <div class="total">
+        <h3>Total price:</h3>
+        <h3>{{ cartTotalPrice }}</h3>
+      </div>
+      <button (click)="checkOut()"><h3>Checkout</h3></button>
+    </div>
+  </div>
+</section>

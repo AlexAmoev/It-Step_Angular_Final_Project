@@ -1,0 +1,79 @@
+<app-brands (toHomeFromBrand)="fromBrndsToHome($event)"></app-brands>
+<section>
+  <div class="sectionLeft">
+    <app-filter (fromFilterToHome)="fromFIlterToHome($event)"></app-filter>
+  </div>
+  <div class="sectionRight">
+    @for (item of products; track $index) {
+    <div class="card">
+      <div
+        class="image"
+        [ngStyle]="{
+          'background-image':
+            'url(' +
+            (item.images[0]
+              ? item.images[0]
+              : 'https://t3.ftcdn.net/jpg/02/14/87/18/360_F_214871809_jdrssOIkYx1d1uO0Y9uc6ainPYcuY9l7.jpg') +
+            ')'
+        }"
+      ></div>
+      <!-- <img [src]="item.images" alt="" /> -->
+      <div class="cardBody">
+        <!-- <p>{{item.rating}}</p> -->
+        <div class="title">
+          <h4>{{ item.title }}</h4>
+        </div>
+        <div class="cardInfo">
+          <h4>Brand: {{ item.brand }}</h4>
+          <h4>Price: {{ item.price.current }} $</h4>
+          <h4>Rating: {{ item.rating.toFixed(1) }}</h4>
+          <h4 [ngStyle]="{ color: item.stock == 0 ? 'red' : 'inherit' }">
+            {{ item.stock == 0 ? "Not in stock" : "Stock: " + item.stock }}
+          </h4>
+        </div>
+        <div class="desc">
+          <p>{{ item.description }}</p>
+        </div>
+        <button
+          class="cardBtn"
+          [hidden]="item.stock == 0"
+          (click)="addToCart(item)"
+        >
+          Add to cart
+        </button>
+      </div>
+    </div>
+
+    }
+  </div>
+</section>
+
+<div class="pageBtns">
+  <div [hidden]="pageSize == totalProducts" class="pages">
+    <button (click)="previous()" [hidden]="currentPage == 1">Previous</button>
+    @for (item of pageList; track $index) {
+    <button
+      [class.active]="currentPage == +item"
+      (click)="getAllProducts(item, pageSize)"
+    >
+      {{ item }}
+    </button>
+    }
+    <button (click)="next()" [hidden]="currentPage == pageListLength">
+      Next
+    </button>
+  </div>
+
+  <div class="pageSize">
+    <button (click)="reset()">Reset</button>
+    <button [hidden]="pageSize == totalProducts" (click)="addSize(5)">
+      Add 5
+    </button>
+    <button [hidden]="pageSize == totalProducts" (click)="addSize(10)">
+      Add 10
+    </button>
+    <button [hidden]="pageSize == totalProducts" (click)="addSize(0)">
+      Add Max
+    </button>
+  </div>
+</div>

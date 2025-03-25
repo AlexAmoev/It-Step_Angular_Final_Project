@@ -1,0 +1,72 @@
+<header>
+  <nav appScroling>
+    <div class="area">
+      <div class="left">
+        <button routerLink="/">
+          <i class="fa-solid fa-house-chimney-window"></i>
+        </button>
+        <button *ngIf="isSingIn" routerLink="/profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </div>
+      <div class="right">
+        <!-- <button routerLink="/login">Log</button> -->
+        <button (click)="showHide()">
+          <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+        </button>
+        <div (click)="showHide()" *ngIf="!hideAuth" class="authOut">
+          <div (click)="$event.stopPropagation()" class="authInner">
+            <app-login></app-login>
+          </div>
+        </div>
+        <button *ngIf="isSingIn && isCart" routerLink="/cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+        <i
+          id="hide"
+          *ngIf="isShown"
+          (click)="HideNav()"
+          class="fa-solid fa-x"
+        ></i>
+        <i
+          id="show"
+          *ngIf="!isShown"
+          (click)="showNav()"
+          class="fa-solid fa-bars"
+        ></i>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div #mobileNav class="mobileNav" [ngClass]="{ active: isShown }">
+  <ul>
+    <li (click)="HideNav()" routerLink="/">
+      <button>
+        <i class="fa-solid fa-house-chimney-window"></i>
+      </button>
+    </li>
+    <li (click)="HideNav()" *ngIf="isSingIn" routerLink="/profile">
+      <button>
+        <i class="fa-solid fa-user"></i>
+      </button>
+    </li>
+    <li>
+      <button (click)="HideNav()" (click)="showHide()">
+        <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i>
+      </button>
+    </li>
+    <li *ngIf="!hideAuth">
+      <div (click)="showHide()" *ngIf="!hideAuth" class="authOut">
+        <div (click)="$event.stopPropagation()" class="authInner">
+          <app-login></app-login>
+        </div>
+      </div>
+    </li>
+    <li>
+      <button (click)="HideNav()" *ngIf="isSingIn && isCart" routerLink="/cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,65 @@
+<section>
+  <div class="userInfo">
+    <div class="userInfoTop">
+      <img *ngIf="user?.avatar" [src]="user.avatar" alt="User Avatar" />
+      <div class="name">
+        <h1>First name: {{ user.firstName }}</h1>
+        <h1>Last name: {{ user.lastName }}</h1>
+        <h1>Age: {{ user.age }}</h1>
+      </div>
+    </div>
+    <div class="userInfoBot">
+      <h3>Email: {{ user.email }}</h3>
+      <h3>Phone: {{ user.phone }}</h3>
+      <h3>Address: {{ user.address }}</h3>
+      <h3>Role: {{ user.role }}</h3>
+      <h3>Gender: {{ user.gender }}</h3>
+    </div>
+    <button (click)="showHide()">Update profile</button>
+  </div>
+</section>
+
+<div (click)="showHide()" *ngIf="!hiden" class="updateUserOut">
+  <div (click)="$event.stopPropagation()" class="updateUserIn">
+    <form class="fomrArea" [formGroup]="formInfo" (ngSubmit)="updateProfile()">
+      <div class="area">
+        <label for=""><h3>First name:</h3></label>
+        <input type="text" formControlName="firstName" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Last name:</h3></label>
+        <input type="text" formControlName="lastName" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Age:</h3></label>
+        <input type="number" formControlName="age" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Address:</h3></label>
+        <input type="text" formControlName="address" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Phone:</h3></label>
+        <input type="text" formControlName="phone" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Zip-code:</h3></label>
+        <input type="text" formControlName="zipcode" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Avatar:</h3></label>
+        <input type="text" formControlName="avatar" />
+      </div>
+      <div class="area">
+        <label for=""><h3>Gender:</h3></label>
+        <select formControlName="gender">
+          <option value="" disabled selected>Choose gender:</option>
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
+          <option value="OTHER">Other</option>
+        </select>
+      </div>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+</div>

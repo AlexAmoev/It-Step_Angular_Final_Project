@@ -1,0 +1,14 @@
+<section>
+  <ul>
+    @for (item of brands; track $index) {
+    <li>
+      <button
+        [ngClass]="{ active: currentBrand == item && currentBrand != 'All' }"
+        (click)="sendToHome(item)"
+      >
+        {{ item }}
+      </button>
+    </li>
+    }
+  </ul>
+</section>

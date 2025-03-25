@@ -1,0 +1,183 @@
+header {
+  // background-color: red;
+  height: 200px;
+  background-image: url("https://files.oaiusercontent.com/file-54oJqMtJGW3DdqYLoPQGU9?se=2025-03-23T21%3A23%3A33Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D324709df-44bc-4d1a-b276-5c3a22fc7d3d.webp&sig=fgZSLz%2BuHG0e40rfaUZoKB8uZ1MNWbsRordnBHCpWR8%3D");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  nav {
+    // margin-bottom: 100px;
+    .area {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 40px;
+      height: 70px;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      backdrop-filter: blur(10px) brightness(80%);
+      background-color: rgba(70, 92, 56, 0.5);
+      color: white;
+      transition: 1s;
+      z-index: 9999999;
+      button {
+        background-color: #dcdcd0;
+        border: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #465c38;
+        transition: 0.5s;
+        i {
+          font-size: 20px;
+        }
+      }
+      button:hover {
+        background-color: #6f7d64;
+        i {
+          color: #dcdcd0;
+        }
+      }
+      .left {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+      .right {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+        .authOut {
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          width: 100vw;
+          height: 100vh;
+          // background-color: rgba(201, 184, 184, 0.9);
+          z-index: 99;
+          background-color: #465C38;
+          // transition: opacity 0.3s ease-in-out;
+          // .authInner {
+          //   border: 1px solid black;
+          // }
+
+          // display: none;
+          // .hidden {
+          //   display: none;
+          // }
+          //   .authInner {
+          //     display: none;
+          //   }
+        }
+      }
+    }
+  }
+}
+
+// .solidNavbar {
+//   border: 2px solid red;
+//   background-color: red;
+//   color: black;
+// }
+
+.mobileNav {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+
+  // opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  // transform: translateY(-100%);
+  // transition: 0.5s;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  margin-top: -200px;
+  background-color: #465C38;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      background-color: #dcdcd0;
+      width: 90%;
+      text-align: center;
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      button {
+        background-color: #dcdcd0;
+        border: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        color: #465c38;
+        transition: 0.5s ease-in-out;
+        i {
+          font-size: 20px;
+        }
+      }
+      button:hover {
+        background-color: #6f7d64;
+        i {
+          color: #dcdcd0;
+        }
+      }
+    }
+    li:hover{
+      background-color: #6f7d64;
+      button{
+        background-color: #6f7d64;
+        i{
+          color: #dcdcd0;
+        }
+      }
+    }
+  }
+}
+
+.mobileNav.active {
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 801px) {
+  .mobileNav {
+    display: none;
+  }
+  #hide {
+    display: none;
+  }
+  #show {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav ul {
+    display: none;
+  }
+  nav i {
+    display: unset;
+  }
+  nav button {
+    display: none;
+  }
+}
